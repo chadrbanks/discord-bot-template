@@ -3,6 +3,7 @@ const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
+// Setup Client
 const client = new Client({ intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
@@ -10,6 +11,7 @@ const client = new Client({ intents: [
         GatewayIntentBits.GuildMembers,
     ], });
 
+// Import Commands
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -28,6 +30,7 @@ for (const folder of commandFolders) {
 	}
 }
 
+// Import Events
 // TODO: Update events to support folders like commands above
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
@@ -42,4 +45,5 @@ for (const file of eventFiles) {
 	}
 }
 
+// Go!
 client.login(token);
