@@ -8,17 +8,23 @@ This template is made so that you can easily use it to make new discord bots.
 
 ## Setup
 
-1. Ensure you have git and yarn installed on your local.
+1. Ensure you have [git](https://git-scm.com) and [yarn](https://yarnpkg.com) installed on your local machine.
 
-2. Clone this repository to a dir: `git clone https://github.com/chadrbanks/discord-bot-template.git`.
+2. Use this template repository to create your own project repo.
 
-3. In the project dir, install the dependencies using: `yarn install` or just `yarn`.
+3. Swap your repo url in this command and clone your repo: `git clone https://github.com/chadrbanks/discord-bot-template.git`.
 
-4. Setup your bot on [Discord.](https://discordjs.guide/preparations/setting-up-a-bot-application.html)
+4. In your local project dir now, install the dependencies using: `yarn install` or just `yarn`.
 
-5. Don't forget to create your [config.json](https://discordjs.guide/creating-your-bot/) from the guide above.
+5. Setup your bot on [Discord.](https://discordjs.guide/preparations/setting-up-a-bot-application.html)
 
-6. You are good to go!
+6. Don't forget to create your [config.json](https://discordjs.guide/creating-your-bot) from the guide above.
+
+7. You are good to go!
+
+```
+Don't forget to update this README!
+```
 
 ## Development
 
@@ -31,16 +37,6 @@ Please note a few things...
 2. You will want to run `yarn deploy:commands` before restarting the server is you are editing the commands.
 
 3. While running locally be sure to pay attention to the console output.
-
-## Environments
-
-TBD
-
-| Name | URL   |
-| ---- | ----- |
-| Test | N / A |
-| Beta | N / A |
-| Prod | N / A |
 
 
 ## Usage
@@ -65,3 +61,15 @@ There are 4 example events in the events folder.
 | create_embed.js | Send t!embed in chat and the bot replys with an example embed.                     |
 | update_embed.js | Listens to a button on the embed, and makes a UI update to the embed when clicked. |
 | send_reply.js   | Listens to a button on the embed, and replies in server with a message.            |
+
+## Deployment
+
+TBD
+
+## Environments
+
+| Name | URL |
+| ---- | --- |
+| Test | TBD |
+| Beta | TBD |
+| Prod | TBD |
