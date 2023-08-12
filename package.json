@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/chadrbanks/discord-bot-template#readme",
   "dependencies": {
+    "cron": "^2.4.0",
     "discord.js": "^14.12.1"
   },
   "devDependencies": {
