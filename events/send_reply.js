@@ -8,9 +8,9 @@ module.exports = {
         if(!interaction.isButton())
          return
 
-        if(interaction.customId != "equipment")
+        if(interaction.customId != "send_reply")
             return
         
-        interaction.reply("You rolled a 1!");
+        interaction.reply("You clicked a button!")
     },
 };
