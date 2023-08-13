@@ -20,7 +20,8 @@
   "homepage": "https://github.com/chadrbanks/discord-bot-template#readme",
   "dependencies": {
     "cron": "^2.4.0",
-    "discord.js": "^14.12.1"
+    "discord.js": "^14.12.1",
+    "pg": "^8.11.2"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",
