@@ -18,12 +18,20 @@ This template is made so that you can easily use it to make new discord bots.
 
 5. Setup your bot on [Discord.](https://discordjs.guide/preparations/setting-up-a-bot-application.html)
 
-6. Don't forget to create your [config.json](https://discordjs.guide/creating-your-bot) from the guide above.
+6. Create an .env file on your local like the one below.
 
 7. You are good to go!
 
 ```
 Don't forget to update this README!
+```
+
+## Config File Example
+
+```
+token=PASTE_APP_TOKEN_HERE
+clientId=PASTE_CLIENT_ID_HERE
+guildId=PASTE_GUILD_ID_HERE
 ```
 
 ## Development

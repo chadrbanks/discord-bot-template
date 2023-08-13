@@ -2,7 +2,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 var CronJob = require('cron').CronJob;
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
+
+const token = process.env.token;
 
 // Setup Client
 const client = new Client({ intents: [
