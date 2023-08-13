@@ -41,6 +41,8 @@ Please note a few things...
 
 ## Usage
 
+Currently there are examples/support for slash commands, events, and a basic cron implementation.
+
 ### Commands
 
 These are the 3 example slash commands in the commands examples folder.
