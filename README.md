@@ -26,6 +26,15 @@ This template is made so that you can easily use it to make new discord bots.
 Don't forget to update this README!
 ```
 
+## Config File Example
+
+```
+{
+    "token": "PASTE_APP_TOKEN_HERE",
+	"clientId": "PASTE_CLIENT_ID_HERE",
+	"guildId": "PASTE_GUILD_ID_HERE"
+}
+```
 ## Development
 
 You can run this service locally using the `yarn start` command.
