@@ -6,7 +6,7 @@
   "scripts": {
     "start:prod": "node index.js",
     "start": "node -r dotenv/config index.js",
-    "deploy:commands": "node deploy-commands.js"
+    "deploy-commands": "node -r dotenv/config deploy-commands.js"
   },
   "repository": {
     "type": "git",

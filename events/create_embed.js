@@ -42,6 +42,7 @@ module.exports = {
         .setTimestamp()
         .setFooter({ text: 'Footer', iconURL: 'https://media.discordapp.net/attachments/1074206678540619867/1126922715077550080/chadrbanks_Pagan_symbol_cbda38d0-9398-4894-b55a-4ed291624af9.png?width=505&height=670' });
 
+        console.log(`${message.author.tag} asked for an embed!`)
         message.reply({ embeds: [exampleEmbed], components: [rowOne, rowTwo] });
     },
 };

@@ -26,7 +26,7 @@ This template is made so that you can easily use it to make new discord bots.
 Don't forget to update this README!
 ```
 
-## Config File Example
+## Example .env File
 
 ```
 token=PASTE_APP_TOKEN_HERE
@@ -47,7 +47,7 @@ Please note a few things...
 3. While running locally be sure to pay attention to the console output.
 
 
-## Usage
+## Bot Usage
 
 Currently there are examples/support for slash commands, events, and a basic cron implementation.
 
@@ -83,12 +83,26 @@ There are 4 example crons in the crons folder, all of these currently just send 
 
 ## Deployment
 
-TBD
+The main branch of this template project is tracked and deployed via railway to my server for testing.
 
-## Environments
+### Package Scripts
+```
+    scripts: {
+        "start:prod": "node index.js",
+        "start": "node -r dotenv/config index.js",
+        "deploy-commands": "node -r dotenv/config deploy-commands.js"
+    }
+```
 
-| Name | URL |
-| ---- | --- |
-| Test | TBD |
-| Beta | TBD |
-| Prod | TBD |
+
+#### start:prod
+
+Used by railway to deploy the main branch everytime there is a new commit.
+
+#### start
+
+Available so `yarn start` can run a local dev env.
+
+#### start
+
+Used so `yarn deploy-commands` can locally update the server commands.
