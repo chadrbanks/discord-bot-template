@@ -7,6 +7,7 @@ module.exports = {
         if (!interaction.isButton()) return;
         if (interaction.customId != "send_reply") return;
         
-        interaction.reply("You clicked a button!")
+        console.log(`${interaction.member.nickname} clicked the button!`)
+        interaction.reply(`${interaction.member.nickname} clicked the button!`)
     },
 };

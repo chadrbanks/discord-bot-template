@@ -26,7 +26,7 @@ This template is made so that you can easily use it to make new discord bots.
 Don't forget to update this README!
 ```
 
-## Config File Example
+## Example .env File
 
 ```
 token=PASTE_APP_TOKEN_HERE

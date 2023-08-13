@@ -40,6 +40,7 @@ module.exports = {
         const rowOne = new ActionRowBuilder().addComponents(update_btn)
         const rowTwo = new ActionRowBuilder().addComponents(reply_btn)
 
+        console.log(`${interaction.member.nickname} updated the embed!`)
         interaction.update({ embeds: [exampleEmbed], components: [rowOne, rowTwo] })
     },
 };
