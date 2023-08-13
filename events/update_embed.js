@@ -4,12 +4,8 @@ module.exports = {
 	name: Events.InteractionCreate,
 	once: false,
 	execute(interaction) {
- 
-        if(!interaction.isButton())
-            return
-
-        if(interaction.customId != "update_embed")
-            return
+        if (!interaction.isButton()) return;
+        if (interaction.customId != "update_embed") return;
         
         const exampleEmbed = EmbedBuilder.from(interaction.message.embeds[0])
 
