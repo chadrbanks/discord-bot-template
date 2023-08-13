@@ -41,6 +41,8 @@ Please note a few things...
 
 ## Usage
 
+Currently there are examples/support for slash commands, events, and a basic cron implementation.
+
 ### Commands
 
 These are the 3 example slash commands in the commands examples folder.
@@ -61,6 +63,17 @@ There are 4 example events in the events folder.
 | create_embed.js | Send t!embed in chat and the bot replys with an example embed.                     |
 | update_embed.js | Listens to a button on the embed, and makes a UI update to the embed when clicked. |
 | send_reply.js   | Listens to a button on the embed, and replies in server with a message.            |
+
+### Crons
+
+There are 4 example crons in the crons folder, all of these currently just send a log to the console.
+
+| Events                | Function                     |
+| --------------------- | ---------------------------- |
+| every_minute.js       | Executes every minute.       |
+| every_five_minutes.js | Executes every five minutes. |
+| every_ten_minutes.js  | Executes every ten minutes.  |
+| every_hour.js         | Executes every hour.         |
 
 ## Deployment
 
