@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 var CronJob = require('cron').CronJob;
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 // Setup Client
@@ -47,27 +47,26 @@ for (const file of eventFiles) {
 }
 
 // Cron Stuff
-function scheduleMessage(cronExpression, msgToSend) {
-	new CronJob(
-		cronExpression,
-		function() {
-			console.log("msg:", msgToSend);
-		},
-		null,
-		true,
-		'America/Detroit'
-	);
+const cronPath = path.join(__dirname, 'crons');
+const cronFiles = fs.readdirSync(cronPath).filter(file => file.endsWith('.js'));
+
+for (const cronFile of cronFiles) {
+	const filePath = path.join(cronPath, cronFile);
+	const cron = require(filePath);
+
+	if(cron.name && cron.interval){
+		console.log(`Creating Cron Event: ${cron.name}`);
+		new CronJob(
+			cron.interval,
+			function() {
+				cron.execute()
+			},
+			null,
+			true,
+			'America/Detroit'
+		);
+	}
 }
-
-// Array of Events
-let upcomingEvents = [{crondate:"* * * * *", msg:"Example Cron!"}];
-
-// Execute Cron Commands
-client.once(Events.ClientReady, c => {
-	console.log('Creating Cron Events!');
-	upcomingEvents.forEach(element => { scheduleMessage(element.crondate, element.msg) });
-	console.log('Cron Processing Complete!');
- });
 
 // Go!
 client.login(token);
