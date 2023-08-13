@@ -4,16 +4,8 @@ module.exports = {
 	name: Events.MessageCreate,
 	once: false,
 	execute(message) {
-        if(message.author.bot)
-            return
-
-        if(!message.content.toLowerCase().startsWith("t!embed"))
-            return
-        
-        if(message.author.id == "616296347556905012"){
-            message.reply(`No embed for you!`)
-            return
-        }
+        if (message.author.bot) return;
+        if (!message.content.toLowerCase().startsWith("t!embed")) return;
         
         const update_btn = new ButtonBuilder()
         update_btn.setCustomId("update_embed")
