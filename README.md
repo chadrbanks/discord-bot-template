@@ -32,6 +32,7 @@ Don't forget to update this README!
 token=PASTE_APP_TOKEN_HERE
 clientId=PASTE_CLIENT_ID_HERE
 guildId=PASTE_GUILD_ID_HERE
+esql=PASTE_ELEPHANT_SQL_CONNECTION_STRING_HERE
 ```
 
 ## Development
@@ -61,17 +62,6 @@ These are the 3 example slash commands in the commands examples folder.
 | examples/server.js  | Reply with server details like user count. |
 | examples/user.js    | List or get contact requests.              |
 
-### Events
-
-There are 4 example events in the events folder.
-
-| Events          | Function                                                                           |
-| --------------- | ---------------------------------------------------------------------------------- |
-| ready.js        | Executes when the bot comes online and is ready.                                   |
-| create_embed.js | Send t!embed in chat and the bot replys with an example embed.                     |
-| update_embed.js | Listens to a button on the embed, and makes a UI update to the embed when clicked. |
-| send_reply.js   | Listens to a button on the embed, and replies in server with a message.            |
-
 ### Crons
 
 There are 4 example crons in the crons folder, all of these currently just send a log to the console.
@@ -82,6 +72,22 @@ There are 4 example crons in the crons folder, all of these currently just send 
 | every_five_minutes.js | Executes every five minutes. |
 | every_ten_minutes.js  | Executes every ten minutes.  |
 | every_hour.js         | Executes every hour.         |
+
+### Events
+
+There are 4 example events in the events folder.
+
+| Events          | Function                                                                           |
+| --------------- | ---------------------------------------------------------------------------------- |
+| ready.js        | Executes when the bot comes online and is ready.                                   |
+| create_embed.js | Send t!embed in chat and the bot replys with an example embed.                     |
+| update_embed.js | Listens to a button on the embed, and makes a UI update to the embed when clicked. |
+| send_reply.js   | Listens to a button on the embed, and replies in server with a message.            |
+| db_time.js      | Connects to the ELephantSQL db and runs SELECT NOW().                              |
+| db_count.js     | Connects to the ELephantSQL db and runs SELECT COUNT(*) FROM main_index.           |
+| db_insert.js    | Connects to the ELephantSQL db and runs an INSERT on main_index.                   |
+| db_update.js    | Connects to the ELephantSQL db and runs an UPDATE on main_index.                   |
+| db_select.js    | Connects to the ELephantSQL db and runs a SELECT on main_index.                    |
 
 ## Deployment
 
@@ -108,3 +114,21 @@ Available so `yarn start` can run a local dev env.
 #### start
 
 Used so `yarn deploy-commands` can locally update the server commands.
+
+## Data
+
+This project now has an instance of ElephantSQL connected to it.
+
+### main_index
+
+I created a main index table using the following query.
+
+```
+CREATE TABLE main_index( 
+    id VARCHAR(32) NOT NULL,
+    val VARCHAR(64) NOT NULL,
+    created TIMESTAMP DEFAULT NOW(),
+    updated TIMESTAMP DEFAULT NULL,
+    CONSTRAINT pk_main_index PRIMARY KEY(id)
+)
+```
