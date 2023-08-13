@@ -8,9 +8,9 @@ const client = new Client({ intents: [
 ], });
 
 module.exports = {
-    name: "every_five_minutes",
-    interval: "*/5 * * * *",
+    name: "canna_cron_am",
+    interval: "20 4 * * *",
     execute(){
-        console.log("Executing every five minutes!");
+        console.log("4:20!");
     }
 };
