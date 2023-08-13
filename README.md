@@ -68,12 +68,10 @@ There are 4 example events in the events folder.
 
 There are 4 example crons in the crons folder, all of these currently just send a log to the console.
 
-| Events                | Function                     |
-| --------------------- | ---------------------------- |
-| every_minute.js       | Executes every minute.       |
-| every_five_minutes.js | Executes every five minutes. |
-| every_ten_minutes.js  | Executes every ten minutes.  |
-| every_hour.js         | Executes every hour.         |
+| Events           | Function |
+| ---------------- | -------- |
+| canna_cron_am.js | 4:20 AM! |
+| canna_cron_pm.js | 4:20 PM! |
 
 ## Deployment
 
